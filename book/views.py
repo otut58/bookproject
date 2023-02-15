@@ -38,6 +38,8 @@ class DeleteBookView(LoginRequiredMixin, DeleteView):
 
         if obj.user != self.request.user:
             raise PermissionDenied
+            
+        return obj
 
 class UpdateBookView(LoginRequiredMixin, UpdateView):
     model = Book
